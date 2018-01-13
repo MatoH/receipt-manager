@@ -1,0 +1,77 @@
+<mat-toolbar>
+  <span>Add new receipt</span>
+</mat-toolbar>
+
+<!--<ng2-webcam [options]="options" [onSuccess]="onSuccess" [onError]="onError"></ng2-webcam>-->
+
+
+<div class="container-fluid">
+
+  <!--<div style="width: 300px;">-->
+    <!--<form (ngSubmit)="onSubmit()">-->
+      <!--<div class="form-group">-->
+        <!--<label for="item">Item</label>-->
+        <!--<input type="text" class="form-control" placeholder="Enter content..."-->
+          <!--id="item" required [(ngModel)]="itemValue" name="item">-->
+      <!--</div>-->
+
+      <!--<div class="btn-group">-->
+        <!--<button type="submit" class="btn btn-success">Submit</button>-->
+      <!--</div>-->
+    <!--</form>-->
+  <!--</div>-->
+  <h2>Content from Firebase</h2>
+
+  <!--<app-camera-input></app-camera-input>-->
+
+  <h1>Image uploader !!!!!!!</h1>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <ul>
+    <li *ngFor="let item of items | async">
+      {{item | json}}
+      <input type="text" #updatetext [value]="item.text" />
+      <button (click)="updateItem(item.key, updatetext.value)">Update</button>
+      <button (click)="deleteItem(item.key)">Delete</button>
+    </li>
+  </ul>
+  <input type="text" #newitem />
+  <button (click)="addItem(newitem.value)">Add</button>
+  <button (click)="deleteEverything()">Delete All</button>
+</div>
+
+<!--<div class="receipt-add-form">-->
+  <!--<mat-form-field>-->
+    <!--<input matInput placeholder="Name">-->
+  <!--</mat-form-field>-->
+
+  <!--<mat-form-field>-->
+    <!--<textarea matInput placeholder="Description"></textarea>-->
+  <!--</mat-form-field>-->
+
+  <!--<mat-form-field>-->
+    <!--<input matInput [matDatepicker]="purchaseDate" placeholder="Choose a date of purchase">-->
+    <!--<mat-datepicker-toggle matSuffix [for]="purchaseDate"></mat-datepicker-toggle>-->
+    <!--<mat-datepicker #purchaseDate></mat-datepicker>-->
+  <!--</mat-form-field>-->
+
+  <!--<mat-form-field>-->
+    <!--<input matInput [matDatepicker]="expirationDate" placeholder="Expiration date">-->
+    <!--<mat-datepicker-toggle matSuffix [for]="expirationDate"></mat-datepicker-toggle>-->
+    <!--<mat-datepicker #expirationDate></mat-datepicker>-->
+  <!--</mat-form-field>-->
+
+<!--</div>-->
+

@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyAMSHO121yclpwxopNV2__c-neFeVdFTu8',
+    authDomain: 'receipt-manager-13550.firebaseapp.com',
+    databaseURL: 'https://receipt-manager-13550.firebaseio.com',
+    projectId: 'receipt-manager-13550',
+    storageBucket: 'receipt-manager-13550.appspot.com',
+    messagingSenderId: '63049782754'
+  }
 };

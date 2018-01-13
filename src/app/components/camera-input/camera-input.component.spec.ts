@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecipeManagerComponent } from './recipe-manager.component';
+import { CameraInputComponent } from './camera-input.component';
 
-describe('RecipeManagerComponent', () => {
-  let component: RecipeManagerComponent;
-  let fixture: ComponentFixture<RecipeManagerComponent>;
+describe('CameraInputComponent', () => {
+  let component: CameraInputComponent;
+  let fixture: ComponentFixture<CameraInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecipeManagerComponent ]
+      declarations: [ CameraInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecipeManagerComponent);
+    fixture = TestBed.createComponent(CameraInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

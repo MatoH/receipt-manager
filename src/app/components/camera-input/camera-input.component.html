@@ -1,0 +1,27 @@
+<div class="container camera-input" style="width: 400px;">
+
+  <!--TODO: Mobile browsers cannot play video without user input,-->
+  <!--so here we're using a button to start it manually.  -->
+  <!--<a href="#" id="start-camera" class="visible">Touch here to start the app.</a>-->
+
+  <video #cameraStream class="camera-stream"></video>
+  <img src="{{ snapshot.imagePlaceholder.src }}" [ngClass]="{'visible': snapshot.imagePlaceholder.visible}" id="snap">
+
+  <div class="controls" [ngClass]="{'visible': controlButtons.visible}">
+    <a (click)="removeSnapshop()" [ngClass]="{'disabled': controlButtons.remove.disabled}" title="Delete Photo">
+      <i class="material-icons">delete</i>
+    </a>
+
+    <a (click)="takeSnapshot(); false;" [ngClass]="{'disabled': controlButtons.snapshot.disabled}" title="Take Photo">
+      <i class="material-icons">camera_alt</i>
+    </a>
+
+    <a [ngClass]="{'disabled': controlButtons.download.disabled}" href="{{ snapshot.downloadUrl }}" download="selfie.png" title="Save Photo">
+      <i class="material-icons">file_download</i>
+    </a>
+  </div>
+
+  <!-- Hidden canvas element. Used for taking snapshot of video. -->
+  <canvas #snapshotCanvas></canvas>
+
+</div>
