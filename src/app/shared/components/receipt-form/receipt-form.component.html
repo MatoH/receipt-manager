@@ -1,0 +1,25 @@
+<form #receiptForm="ngForm" (ngSubmit)="onSubmit()" class="receipt-form" action="">
+    <mat-form-field>
+      <input matInput [(ngModel)]="receipt.name" name="name" placeholder="Name" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="receipt.description" name="description" placeholder="Description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="receipt.purchaseDate" [matDatepicker]="purchaseDate" name="purchaseDate" placeholder="Choose a date of purchase" required>
+      <mat-datepicker-toggle matSuffix [for]="purchaseDate"></mat-datepicker-toggle>
+      <mat-datepicker #purchaseDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="receipt.expireDate" [matDatepicker]="expirationDate" name="expirationDate" placeholder="Expiration date" required>
+      <mat-datepicker-toggle matSuffix [for]="expirationDate"></mat-datepicker-toggle>
+      <mat-datepicker #expirationDate></mat-datepicker>
+    </mat-form-field>
+
+    <app-file-upload [(selectedFiles)]="selectedFiles"></app-file-upload>
+
+    <button mat-button type="submit" class="mat-raised-button mat-warn"><b>Add</b></button>
+  </form>

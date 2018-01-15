@@ -29,6 +29,7 @@ export class CameraInputComponent implements OnInit {
     },
     downloadUrl: string,
   };
+
   constructor() { }
 
   ngOnInit() {
@@ -67,6 +68,7 @@ export class CameraInputComponent implements OnInit {
     this.cameraStream.nativeElement.classList.add('visible');
     this.controlButtons.visible = true;
   }
+
   takeSnapshot() {
     // Trick that involves a hidden canvas element.
    const context = this.snapshotCanvas.nativeElement.getContext('2d'),
@@ -100,6 +102,7 @@ export class CameraInputComponent implements OnInit {
       this.cameraStream.nativeElement.pause();
     }
   }
+
   removeSnapshop() {
     this.snapshot.imagePlaceholder.src = '';
     this.snapshot.imagePlaceholder.visible = false;

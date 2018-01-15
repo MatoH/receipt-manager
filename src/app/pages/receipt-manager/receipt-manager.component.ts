@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { ReceiptDetailDialogComponent } from '../../components/receipt-detail-dialog/receipt-detail-dialog.component';
+import { ReceiptDetailDialogComponent } from '../../shared/components/receipt-detail-dialog/receipt-detail-dialog.component';
 
 @Component({
   selector: 'app-receipt-manager',
