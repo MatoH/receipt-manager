@@ -34,7 +34,7 @@ export class FileUploadComponent implements OnInit {
       // this.currentUpload = new FileUpload(this.selectedFiles[idx]);
       // this.fileUploadService.pushUpload(this.currentUpload);
       // this.currentUpload = new FileUpload(this.selectedFiles[idx]);
-      this.fileStorageService.storeFile(this.selectedFiles[idx]);
+      this.fileStorageService.store(this.selectedFiles[idx]);
     });
   }
 }

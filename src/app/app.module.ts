@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AboutComponent } from './pages/about/about.component';
-import { ReceiptManagerComponent } from './pages/receipt-manager/receipt-manager.component';
+import { ReceiptListComponent } from './pages/receipt-list/receipt-list.component';
 import { ReceiptAddComponent } from './pages/receipt-add/receipt-add.component';
 
 import { ReceiptDetailDialogComponent } from './shared/components/receipt-detail-dialog/receipt-detail-dialog.component';
@@ -41,7 +41,7 @@ import { ReceiptFormComponent } from './shared/components/receipt-form/receipt-f
   declarations: [
     AppComponent,
     AboutComponent,
-    ReceiptManagerComponent,
+    ReceiptListComponent,
     ReceiptDetailDialogComponent,
     ReceiptAddComponent,
     CameraInputComponent,

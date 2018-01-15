@@ -31,7 +31,7 @@ export class ReceiptFormComponent implements OnInit {
       this.fileStorageService.storeFiles(this.selectedFiles);
     } else {
       // Store receipt without picture
-      this.receiptStorageService.storeReceipt(this.receipt);
+      this.receiptStorageService.store(this.receipt);
     }
   }
 
@@ -40,7 +40,7 @@ export class ReceiptFormComponent implements OnInit {
     // All files were already uploaded to file storage,
     // if yes then save receipt with all files urls
     if (this.selectedFiles.length === this.receipt.filesUrls.length) {
-      this.receiptStorageService.storeReceipt(this.receipt);
+      this.receiptStorageService.store(this.receipt);
     }
   }
 }
