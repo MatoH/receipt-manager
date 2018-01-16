@@ -7,6 +7,6 @@ export class Receipt {
     public description: string,
     public purchaseDate: Date,
     public expireDate: Date,
-    public filesUrls: Array<object>
+    public files: Array<object>
   ) { }
 }

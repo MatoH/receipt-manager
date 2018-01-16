@@ -36,6 +36,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { FileUploadComponent } from './shared/components/file-upload/file-upload.component';
 import { ReceiptFormComponent } from './shared/components/receipt-form/receipt-form.component';
+import { ReversePipe } from './shared/pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ReceiptFormComponent } from './shared/components/receipt-form/receipt-f
     ReceiptAddComponent,
     CameraInputComponent,
     FileUploadComponent,
-    ReceiptFormComponent
+    ReceiptFormComponent,
+    ReversePipe
   ],
   entryComponents: [
     ReceiptDetailDialogComponent

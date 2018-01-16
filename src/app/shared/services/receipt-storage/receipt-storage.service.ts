@@ -20,7 +20,7 @@ export class ReceiptStorageService {
       description: receipt.description,
       purchaseDate: receipt.purchaseDate.toDateString(),
       expireDate: receipt.expireDate.toDateString(),
-      filesUrls: receipt.filesUrls
+      files: receipt.files
     };
   }
 

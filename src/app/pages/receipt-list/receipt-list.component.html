@@ -9,13 +9,21 @@
 
 <div class="flex-container">
 
-  <mat-card *ngFor="let receipt of receipts | async" class="receipt-list-card">
+  <mat-card *ngFor="let receipt of receipts | async | reverse" class="receipt-list-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{ receipt.name }}</mat-card-title>
       <mat-card-subtitle>{{ receipt.description }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image (click)="openDialog()" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="xxxx">
+
+    <div *ngIf="receipt.files" style="max-width: 200px; margin: 0 auto;">
+      <img (click)="openDialog()" src="{{ receipt.files[0].downloadUrl }}" alt="{{ receipt.files[0].name }}" style="width: 100%;">
+    </div>
+
+    <div *ngIf="receipt.files && receipt.files.length > 1" style="text-align: center">
+      <button mat-button style="margin-bottom: 10px;">Show all images</button>
+    </div>
+
     <mat-card-content>
       <p><b>Date:</b> {{ receipt.purchaseDate | date : 'dd.MM.yyyy' }}</p>
       <p><b>Expiration date:</b> {{ receipt.expireDate | date : 'dd.MM.yyyy' }}</p>
