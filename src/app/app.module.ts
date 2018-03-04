@@ -9,6 +9,7 @@ import { ReceiptListComponent } from './pages/receipt-list/receipt-list.componen
 import { ReceiptAddComponent } from './pages/receipt-add/receipt-add.component';
 
 import { ReceiptDetailDialogComponent } from './shared/components/receipt-detail-dialog/receipt-detail-dialog.component';
+import { ReceiptDeleteDialogComponent } from './shared/components/receipt-delete-dialog/receipt-delete-dialog.component';
 import { CameraInputComponent } from './shared/components/camera-input/camera-input.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,6 +45,7 @@ import { ReversePipe } from './shared/pipes/reverse.pipe';
     AboutComponent,
     ReceiptListComponent,
     ReceiptDetailDialogComponent,
+    ReceiptDeleteDialogComponent,
     ReceiptAddComponent,
     CameraInputComponent,
     FileUploadComponent,
@@ -51,7 +53,8 @@ import { ReversePipe } from './shared/pipes/reverse.pipe';
     ReversePipe
   ],
   entryComponents: [
-    ReceiptDetailDialogComponent
+    ReceiptDetailDialogComponent,
+    ReceiptDeleteDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@ export class ReceiptStorageService {
   // Transform receipt object to object that could to stored into firebase realtime database
   static transformReceipt(receipt: Receipt): object {
     return {
+      key: receipt.key,
       name: receipt.name,
       description: receipt.description,
       purchaseDate: receipt.purchaseDate.toDateString(),
@@ -24,8 +25,20 @@ export class ReceiptStorageService {
     };
   }
 
-  store(receipt: Receipt) {
-    this.receiptList.push(ReceiptStorageService.transformReceipt(receipt));
+  store(receipt: Receipt): string {
+     return this.receiptList.push(ReceiptStorageService.transformReceipt(receipt)).key;
+  }
+
+  deleteReceipt(receipt: Receipt) {
+    this.receiptList.remove(receipt.key);
+  }
+
+  attachReceiptId(receiptKey: string) {
+    this.receiptList.update(receiptKey, { key: receiptKey });
+  }
+
+  updateFiles(receiptKey: string, files: Array<object>) {
+    this.receiptList.update(receiptKey, { files: files });
   }
 
   all(): Observable<any[]> {
