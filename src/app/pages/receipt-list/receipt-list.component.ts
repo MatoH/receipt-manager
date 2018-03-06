@@ -25,8 +25,10 @@ export class ReceiptListComponent implements OnInit {
     this.receipts = this.receiptStorageService.all();
   }
 
-  openDetailDialog() {
-    this.dialog.open(ReceiptDetailDialogComponent, {});
+  openDetailDialog(receipt: Receipt) {
+    this.dialog.open(ReceiptDetailDialogComponent, {
+      data: { receipt: receipt }
+    });
   }
 
   openDeleteDialog(receipt: Receipt) {

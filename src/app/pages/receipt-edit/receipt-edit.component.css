@@ -7,18 +7,18 @@
   flex-flow: row wrap;
   display: -webkit-box;
   display: flex;
-  max-width: 800px;
+  max-width: 500px;
 }
 .file-gallery div {
   -webkit-box-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  width: 400px;
+  width: 200px;
+  margin: .5vw;
 }
 .file-gallery div img {
   width: 100%;
   height: auto;
-  border: 1px solid black
 }
 @media screen and (max-width: 400px) {
   .file-gallery div { margin: 0; }

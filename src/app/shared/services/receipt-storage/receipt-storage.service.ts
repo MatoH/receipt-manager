@@ -25,6 +25,17 @@ export class ReceiptStorageService {
     };
   }
 
+  get(receiptKey: string): any {
+    return this.db.object(`${environment.firebase.databaseName}/${receiptKey}`).valueChanges();
+  }
+
+  update(receipt: Receipt) {
+    this.receiptList.update(
+      receipt.key,
+      ReceiptStorageService.transformReceipt(receipt)
+    );
+  }
+
   store(receipt: Receipt): string {
      return this.receiptList.push(ReceiptStorageService.transformReceipt(receipt)).key;
   }
@@ -33,7 +44,7 @@ export class ReceiptStorageService {
     this.receiptList.remove(receipt.key);
   }
 
-  attachReceiptId(receiptKey: string) {
+  attachReceiptKey(receiptKey: string) {
     this.receiptList.update(receiptKey, { key: receiptKey });
   }
 

@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <span>Update receipt</span>
+</mat-toolbar>
+<app-receipt-form [receipt]="(receipt)" [buttonText]="'Update'" [action]="'update'"></app-receipt-form>
+<div *ngIf="receipt">
+  <h3>Existing images</h3>
+  <div class="file-gallery" >
+    <div *ngFor="let file of receipt.files">
+      <img src="{{ file.downloadUrl }}" alt="{{ file.name }}">
+      <button mat-button class="mat-raised-button" (click)="openDeleteDialog(receipt, file.name)">Delete {{ file.name }}</button>
+    </div>
+  </div>
+</div>

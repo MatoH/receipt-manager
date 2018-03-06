@@ -10,6 +10,7 @@ import { ReceiptAddComponent } from './pages/receipt-add/receipt-add.component';
 
 import { ReceiptDetailDialogComponent } from './shared/components/receipt-detail-dialog/receipt-detail-dialog.component';
 import { ReceiptDeleteDialogComponent } from './shared/components/receipt-delete-dialog/receipt-delete-dialog.component';
+import { FileDeleteDialogComponent } from './shared/components/file-delete-dialog/file-delete-dialog.component';
 import { CameraInputComponent } from './shared/components/camera-input/camera-input.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,6 +39,7 @@ import { environment } from '../environments/environment';
 import { FileUploadComponent } from './shared/components/file-upload/file-upload.component';
 import { ReceiptFormComponent } from './shared/components/receipt-form/receipt-form.component';
 import { ReversePipe } from './shared/pipes/reverse.pipe';
+import { ReceiptEditComponent } from './pages/receipt-edit/receipt-edit.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { ReversePipe } from './shared/pipes/reverse.pipe';
     ReceiptListComponent,
     ReceiptDetailDialogComponent,
     ReceiptDeleteDialogComponent,
+    FileDeleteDialogComponent,
     ReceiptAddComponent,
+    ReceiptEditComponent,
     CameraInputComponent,
     FileUploadComponent,
     ReceiptFormComponent,
@@ -54,7 +58,8 @@ import { ReversePipe } from './shared/pipes/reverse.pipe';
   ],
   entryComponents: [
     ReceiptDetailDialogComponent,
-    ReceiptDeleteDialogComponent
+    ReceiptDeleteDialogComponent,
+    FileDeleteDialogComponent
   ],
   imports: [
     BrowserModule,

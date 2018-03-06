@@ -1,4 +1,4 @@
 <mat-toolbar>
   <span>Add new receipt</span>
 </mat-toolbar>
-<app-receipt-form></app-receipt-form>
+<app-receipt-form [receipt]="(receipt)" [buttonText]="'Add'" [action]="'store'"></app-receipt-form>

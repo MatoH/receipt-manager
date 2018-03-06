@@ -17,13 +17,17 @@ export class FileStorageService {
   deleteReceiptFiles(receipt: Receipt) {
     if (typeof receipt.files !== 'undefined') {
       for (const file of receipt.files) {
-        this.storageReference.child(`${environment.firebase.fileStorageName}/${receipt.key}/${file.name}`).delete().then(function() {
-          console.log('File: ' + file.name + ' was deleted!');
-        }).catch(function(error) {
-          console.log(error);
-        });
+        this.deleteFile(receipt, file.name);
       }
     }
+  }
+
+  deleteFile(receipt: Receipt, fileName: string) {
+    this.storageReference.child(`${environment.firebase.fileStorageName}/${receipt.key}/${fileName}`).delete().then(function() {
+      console.log('File: ' + fileName + ' was deleted!');
+    }).catch(function(error) {
+      console.log(error);
+    });
   }
 
   storeFiles(receiptKey: string, files: any) {
@@ -50,7 +54,6 @@ export class FileStorageService {
         // TODO: Use interface
         // File was stored, trigger event with file data
         this.fileWasStored.next({
-          'receiptKey': receiptKey,
           'name': file.name,
           'downloadUrl': fileUploadTask.snapshot.downloadURL
         });

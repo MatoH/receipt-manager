@@ -4,11 +4,11 @@
   <!-- This fills the remaining space of the current row -->
   <span class="flex-spacer"></span>
 
-  <a routerLink="/receipts/add" mat-button class="mat-raised-button mat-warn" routerLinkActive="active">Add</a>
+  <a routerLink="/receipts/add" mat-button class="mat-raised-button mat-warn">Add</a>
 </mat-toolbar>
 
 <div class="flex-container">
-
+  <!-- Unwrap receipt list binding from firebase -->
   <mat-card *ngFor="let receipt of receipts | async | reverse" class="receipt-list-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -17,11 +17,11 @@
     </mat-card-header>
 
     <div *ngIf="receipt.files" style="max-width: 200px; margin: 0 auto;">
-      <img (click)="openDetailDialog()" src="{{ receipt.files[0].downloadUrl }}" alt="{{ receipt.files[0].name }}" style="width: 100%;">
+      <img (click)="openDetailDialog(receipt)" src="{{ receipt.files[0].downloadUrl }}" alt="{{ receipt.files[0].name }}" style="width: 100%;">
     </div>
 
     <div *ngIf="receipt.files && receipt.files.length > 1" style="text-align: center">
-      <button mat-button style="margin-bottom: 10px;">Show all images</button>
+      <button mat-button style="margin-bottom: 10px;" (click)="openDetailDialog(receipt)">Show all images</button>
     </div>
 
     <mat-card-content>
@@ -29,7 +29,7 @@
       <p><b>Expiration date:</b> {{ receipt.expireDate | date : 'dd.MM.yyyy' }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button class="mat-raised-button mat-primary">Edit</button>
+      <a routerLink="/receipts/{{ receipt.key }}/edit" mat-button class="mat-raised-button mat-primary">Edit</a>
       <button mat-button class="mat-raised-button" style="float: right" (click)="openDeleteDialog(receipt)">Delete</button>
     </mat-card-actions>
   </mat-card>
